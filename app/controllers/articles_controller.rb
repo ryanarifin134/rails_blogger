@@ -7,6 +7,10 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find(params[:id])
+
+    # Embed comment form into article page
+    @comment = Comment.new
+    @comment.article_id = @article.id
   end
 
   def new
